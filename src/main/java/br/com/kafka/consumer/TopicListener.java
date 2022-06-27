@@ -1,4 +1,4 @@
-package br.com.example.broker.consumer;
+package br.com.kafka.consumer;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,9 +19,9 @@ public class TopicListener {
     @KafkaListener(topics = "${topic.name.consumer}", groupId = "group_id")
     public void consume(ConsumerRecord<String, String> payload){
         log.info("Tópico: {}", topicName);
-        log.info("key: {}", payload.key());
-        log.info("Headers: {}", payload.headers());
-        log.info("Partion: {}", payload.partition());
+        // log.info("key: {}", payload.key());
+        // log.info("Headers: {}", payload.headers());
+        // log.info("Partion: {}", payload.partition());
         log.info("Order: {}", payload.value());
     }
 
